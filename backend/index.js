@@ -5,6 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
 require('dotenv').config();
+const path = require('path');
 
 // middleware
 app.use(express.json());
@@ -14,6 +15,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 
 // routes
 const bookRoutes = require('./src/books/book.route');
