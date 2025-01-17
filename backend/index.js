@@ -11,7 +11,7 @@ const path = require('path');
 app.use(express.json());
 app.use(
   cors({
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5173', 'https://books-6fn8.onrender.com/'],
     credentials: true,
   })
 );
